@@ -9,9 +9,9 @@ import itertools
 import string
 
 
+filename = "log.txt"
 
-
-with open('file.txt', 'r') as file:
+with open(filename, 'r') as file:
     # Read the content of the file and split it by blank spaces
     data = file.read().split()
 
@@ -56,7 +56,7 @@ def crack():
                 inputElement = driver.find_element(By.XPATH, '//*[@id="content_right"]/div/div/form/div[1]/input')
                 inputElement.send_keys(guess)
                 inputElement.send_keys(Keys.ENTER)
-                with open('file.txt', 'a') as f:
+                with open(filename, 'a') as f:
                     f.write(guess+' ')
             current_position += 1  # Update the current position for each guess
                 
